@@ -20,7 +20,7 @@
             <button type="submit">Shorten</button>
         </form>
         <h2>Shortened URLs</h2>
-        <ul id="shortened-urls"></ul>
+        <ul id="shortened-urls" class="urls-list"></ul>
     </div>
     <script>
         const fetchShortenedURLs = async () => {
@@ -35,6 +35,7 @@
                     //     console.log('value-->',links[key])
                     // })
                     const list = document.getElementById("shortened-urls")
+                    list.innerHTML = ""
                     for (const [code,url] of Object.entries(links)){
                         const li = document.createElement("li")
                         li.innerHTML = `<a href="${url}" target="_blank">${window.location.origin}/${code}</a> - ${url}`
