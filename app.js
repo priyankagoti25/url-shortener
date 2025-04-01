@@ -2,7 +2,7 @@ import {createServer} from 'http'
 import {readFile, writeFile} from 'fs/promises'
 import path from "path";
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 const DATA_FILE = path.join("data", "links.json")
 
 const serverFile = async (res, filePath, contentType) => {
